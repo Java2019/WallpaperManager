@@ -17,6 +17,7 @@ public class WallpaperActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+
         try{
             wallpaperManager.setResource(R.drawable.nyc);
             Toast.makeText(this, "Wallpaper has been changed", Toast.LENGTH_SHORT).show();
