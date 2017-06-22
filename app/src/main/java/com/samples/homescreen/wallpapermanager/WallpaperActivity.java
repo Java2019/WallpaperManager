@@ -6,11 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import java.io.IOException;
-
 public class WallpaperActivity extends Activity implements View.OnClickListener{
-
-    private WallpaperManager wallpaperManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +16,11 @@ public class WallpaperActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
         try{
-            wallpaperManager.setResource(R.drawable.wallpaper);
+            wallpaperManager.setResource(R.drawable.nyc);
             Toast.makeText(this, "Wallpaper has been changed", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
